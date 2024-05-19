@@ -1,5 +1,9 @@
 const UserMenu = () => {
-  return <div>UserMenu</div>;
+  return (
+    <div>
+      <h2>Welcome, user</h2>
+    </div>
+  );
 };
 
 export default UserMenu;

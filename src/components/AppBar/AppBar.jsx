@@ -1,5 +1,15 @@
+import Navigation from "../Navigation/Navigation";
+import UserMenu from "../UserMenu/UserMenu";
+import AuthNav from "../AuthNav/AuthNav";
+
 const AppBar = () => {
-  return <div>AppBar</div>;
+  const isLoggedIn = false;
+  return (
+    <div>
+      <Navigation />
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+    </div>
+  );
 };
 
 export default AppBar;

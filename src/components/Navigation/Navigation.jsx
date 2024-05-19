@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import s from "./Navigation.module.css";
 
 const Navigation = () => {
+  const isLoggedIn = false;
   const activeClass = ({ isActive }) => {
     return clsx(isActive && s.active);
   };
