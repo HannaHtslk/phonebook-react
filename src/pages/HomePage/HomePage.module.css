@@ -1,1 +1,11 @@
+.container {
+  display: flex;
+  padding: 400px 700px 200px 100px;
+  min-height: 100vh;
+}
 
+.title {
+  font-size: 50px;
+  font-weight: 300;
+  color: #fff;
+}
