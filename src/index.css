@@ -1,6 +1,13 @@
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.3),
+      rgba(46, 47, 66, 0.3)
+    ),
+    url("./assets/smooth-stone-texture.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
 h1,
