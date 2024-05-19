@@ -1,0 +1,33 @@
+.icon {
+  margin-right: 10px;
+  color: #6c757d;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: all 0.3s;
+}
+
+.container:hover {
+  background-color: #e9ecef;
+}
+
+.deleteButton {
+  padding: 5px 10px;
+  background-color: lightgray;
+  border: none; /* No border */
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: black; /* Change color on hover to a darker orange */
+}

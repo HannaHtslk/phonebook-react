@@ -1,0 +1,10 @@
+.container {
+  padding: 30px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filter {
+  width: 340px;
+}

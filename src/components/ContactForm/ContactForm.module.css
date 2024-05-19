@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+}
+.container {
+  margin-left: 30px;
+  margin-bottom: 15px;
+  width: 340px;
+  height: auto;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: all 0.3s;
+  gap: 15px;
+}
+.container:hover {
+  background-color: #e9ecef;
+}
+
+.input {
+  width: 300px;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+
+  padding: 5px 10px;
+  width: 150px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: black;
+}
+
+.error {
+  color: red;
+}
