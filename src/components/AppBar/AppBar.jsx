@@ -5,10 +5,10 @@ import AuthNav from "../AuthNav/AuthNav";
 const AppBar = () => {
   const isLoggedIn = false;
   return (
-    <div>
+    <header>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </div>
+    </header>
   );
 };
 
