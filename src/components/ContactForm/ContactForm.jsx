@@ -4,9 +4,8 @@ import { useId } from "react";
 
 import s from "./ContactForm.module.css";
 import { ErrorMessage } from "formik";
-import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoading } from "../../redux/contacts/contactsSlice";
-import Loader from "../../components/Loader/Loader";
+import { useDispatch } from "react-redux";
+
 import { addContactsThunk } from "../../redux/contacts/contactsOps";
 
 const ContactForm = () => {
@@ -32,10 +31,8 @@ const ContactForm = () => {
   const nameId = useId();
   const phoneId = useId();
 
-  const isLoading = useSelector(selectIsLoading);
   return (
     <>
-      {isLoading && <Loader />}
       <Formik
         initialValues={{ name: "", number: "" }}
         onSubmit={handleSubmit}

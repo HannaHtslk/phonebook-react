@@ -3,10 +3,14 @@ import s from "./LoginForm.module.css";
 import { useId } from "react";
 import * as Yup from "yup";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginThunk } from "../../redux/auth/operations";
 
 const LoginForm = () => {
   const emailFieldId = useId();
   const passwordFieldId = useId();
+
+  const dispatch = useDispatch();
 
   const FeedbackSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Required"),
@@ -21,7 +25,7 @@ const LoginForm = () => {
     password: "",
   };
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispatch(loginThunk(values));
     actions.resetForm();
   };
   return (

@@ -1,8 +1,9 @@
 .container {
   width: auto;
-  padding: 30px;
+  padding: 15px;
   display: block;
   margin: 0 auto;
+  position: relative;
 }
 
 .list {

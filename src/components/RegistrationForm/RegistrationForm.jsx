@@ -4,14 +4,18 @@ import { useId } from "react";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { registerThunk } from "../../redux/auth/operations";
 
 const RegistrationForm = () => {
   const nameFieldId = useId();
   const emailFieldId = useId();
   const passwordFieldId = useId();
 
+  const dispatch = useDispatch();
+
   const FeedbackSchema = Yup.object().shape({
-    username: Yup.string()
+    name: Yup.string()
       .min(2, "Too Short!")
       .max(50, "Too Long!")
       .required("Required"),
@@ -23,13 +27,14 @@ const RegistrationForm = () => {
   });
 
   const initialValues = {
-    username: "",
+    name: "",
     email: "",
     password: "",
   };
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispatch(registerThunk(values));
+
     actions.resetForm();
   };
   return (
@@ -45,14 +50,10 @@ const RegistrationForm = () => {
             <Field
               className={s.input}
               type="text"
-              name="username"
+              name="name"
               id={nameFieldId}
             />
-            <ErrorMessage
-              className={s.error}
-              name="username"
-              component="span"
-            />
+            <ErrorMessage className={s.error} name="name" component="span" />
           </div>
           <div className={s.wrapper}>
             <label htmlFor={emailFieldId}>Email</label>
