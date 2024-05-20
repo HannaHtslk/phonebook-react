@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchContactsThunk } from "./redux/contactsOps";
+import { fetchContactsThunk } from "./redux/contacts/contactsOps";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";

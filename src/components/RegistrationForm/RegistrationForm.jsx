@@ -3,6 +3,7 @@ import s from "./RegistrationForm.module.css";
 import { useId } from "react";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
+import { NavLink } from "react-router-dom";
 
 const RegistrationForm = () => {
   const nameFieldId = useId();
@@ -76,6 +77,12 @@ const RegistrationForm = () => {
               name="password"
               component="span"
             />
+          </div>
+          <div className={s.login}>
+            <p>Already have an account? </p>
+            <NavLink className={s.link} to="/login">
+              Log in
+            </NavLink>
           </div>
           <button className={s.btn} type="submit">
             Register

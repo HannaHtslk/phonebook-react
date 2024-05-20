@@ -8,7 +8,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  width: 600px;
   min-height: auto;
   padding: 20px;
   border: 1px solid #1c1b1b;
@@ -49,4 +49,17 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.link {
+  color: black;
+  transition: color 0.3s;
+}
+.link:hover {
+  color: #fff;
 }

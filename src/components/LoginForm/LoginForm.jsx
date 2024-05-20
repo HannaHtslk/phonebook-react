@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./LoginForm.module.css";
 import { useId } from "react";
 import * as Yup from "yup";
+import { NavLink } from "react-router-dom";
 
 const LoginForm = () => {
   const emailFieldId = useId();
@@ -56,8 +57,15 @@ const LoginForm = () => {
                 component="span"
               />
             </div>
+            <div className={s.login}>
+              <p>Do not have an account? </p>
+              <NavLink className={s.link} to="/register">
+                Register
+              </NavLink>
+            </div>
+
             <button className={s.btn} type="submit">
-              Register
+              Log in
             </button>
           </Form>
         </Formik>
