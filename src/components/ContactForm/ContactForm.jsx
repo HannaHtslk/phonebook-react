@@ -5,9 +5,9 @@ import { useId } from "react";
 import s from "./ContactForm.module.css";
 import { ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoading } from "../../redux/contactsSlice";
+import { selectIsLoading } from "../../redux/contacts/contactsSlice";
 import Loader from "../../components/Loader/Loader";
-import { addContactsThunk } from "../../redux/contactsOps";
+import { addContactsThunk } from "../../redux/contacts/contactsOps";
 
 const ContactForm = () => {
   const dispatch = useDispatch();

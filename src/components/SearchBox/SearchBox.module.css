@@ -7,4 +7,7 @@
 }
 .filter {
   width: 340px;
+  border-radius: 8px;
+  border: none;
+  height: 30px;
 }

@@ -1,8 +1,9 @@
 .wrapper {
   display: flex;
-  max-width: 800px;
+  /* max-width: 00px; */
   width: 100%;
   justify-content: space-between;
+  padding-left: 15px;
 }
 
 .title {
@@ -27,4 +28,20 @@
 .btn:hover {
   background-color: black;
   color: #fff;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  color: lightgray;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: black;
+}
+
+.active {
+  composes: link;
+  color: black;
 }

@@ -8,6 +8,7 @@ import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import Layout from "./components/Layout/Layout";
 import NotFound from "./pages/NotFound/NotFound";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        {/* <Route path="contacts" element={<ContactList /> } /> */}
+        <Route path="contacts" element={<ContactsPage />} />
         <Route path="register" element={<RegistrationPage />} />
         <Route path="login" element={<LoginPage />} />
       </Route>

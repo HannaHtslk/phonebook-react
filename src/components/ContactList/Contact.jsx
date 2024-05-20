@@ -3,8 +3,8 @@ import { FaPhone } from "react-icons/fa6";
 import s from "./Contact.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
-import { deleteContactsThunk } from "../../redux/contactsOps";
-import { selectIsLoading } from "../../redux/contactsSlice";
+import { deleteContactsThunk } from "../../redux/contacts/contactsOps";
+import { selectIsLoading } from "../../redux/contacts/contactsSlice";
 import Loader from "../Loader/Loader";
 
 const Contact = ({ item }) => {
