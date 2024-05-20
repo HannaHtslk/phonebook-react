@@ -9,6 +9,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import Layout from "./components/Layout/Layout";
 import NotFound from "./pages/NotFound/NotFound";
 import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import PrivateRoute from "./routes/PrivateRoute";
+import PublicRoute from "./routes/PublicRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,12 +20,33 @@ function App() {
   }, [dispatch]);
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <Layout />
+          </PrivateRoute>
+        }
+      >
         <Route index element={<HomePage />} />
         <Route path="contacts" element={<ContactsPage />} />
-        <Route path="register" element={<RegistrationPage />} />
-        <Route path="login" element={<LoginPage />} />
       </Route>
+      <Route
+        path="register"
+        element={
+          <PublicRoute>
+            <RegistrationPage />
+          </PublicRoute>
+        }
+      />
+      <Route
+        path="login"
+        element={
+          <PublicRoute>
+            <LoginPage />
+          </PublicRoute>
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
