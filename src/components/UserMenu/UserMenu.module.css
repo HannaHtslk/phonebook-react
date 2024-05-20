@@ -8,12 +8,13 @@
 .title {
   color: #fff;
   font-weight: 200;
+  font-size: 20px;
 }
 
 .btn {
   min-width: 100px;
+  height: auto;
 
-  padding: 10px;
   font-size: 16px;
   color: black;
   background-color: rgba(245, 238, 238, 0.395);

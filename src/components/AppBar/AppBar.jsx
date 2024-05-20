@@ -4,7 +4,7 @@ import AuthNav from "../AuthNav/AuthNav";
 import s from "./AppBar.module.css";
 
 const AppBar = () => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return (
     <header className={s.container}>
       <Navigation />
