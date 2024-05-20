@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.title {
+  color: #fff;
+  font-weight: 200;
+}
+
+.btn {
+  min-width: 100px;
+
+  padding: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: rgba(245, 238, 238, 0.395);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: black;
+  color: #fff;
+}

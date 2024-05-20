@@ -1,7 +1,9 @@
+import s from "./UserMenu.module.css";
 const UserMenu = () => {
   return (
-    <div>
-      <h2>Welcome, user</h2>
+    <div className={s.wrapper}>
+      <h2 className={s.title}>Welcome, user</h2>
+      <button className={s.btn}>Logout</button>
     </div>
   );
 };
