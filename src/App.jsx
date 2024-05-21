@@ -13,7 +13,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import { refreshThunk } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/slice";
-import Loader from "./components/Loader/Loader";
+
 import Refresher from "./components/Refresher/Refresher";
 
 function App() {

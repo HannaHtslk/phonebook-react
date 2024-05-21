@@ -5,6 +5,7 @@ import {
   editContactsThunk,
   fetchContactsThunk,
 } from "./contactsOps";
+import { logoutThunk } from "../auth/operations";
 
 const initialState = {
   items: [],
@@ -41,6 +42,9 @@ const contactsSlice = createSlice({
         const item = state.items.find((item) => item.id === payload.id);
         item.name = payload.name;
         item.number = payload.number;
+      })
+      .addCase(logoutThunk.fulfilled, () => {
+        return initialState;
       })
 
       .addMatcher(
