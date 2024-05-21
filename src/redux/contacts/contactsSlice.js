@@ -2,6 +2,7 @@ import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
   addContactsThunk,
   deleteContactsThunk,
+  editContactsThunk,
   fetchContactsThunk,
 } from "./contactsOps";
 
@@ -35,6 +36,11 @@ const contactsSlice = createSlice({
       .addCase(addContactsThunk.fulfilled, (state, { payload }) => {
         state.items.push(payload);
         state.isLoading = false;
+      })
+      .addCase(editContactsThunk.fulfilled, (state, { payload }) => {
+        const item = state.items.find((item) => item.id === payload.id);
+        item.name = payload.name;
+        item.number = payload.number;
       })
 
       .addMatcher(

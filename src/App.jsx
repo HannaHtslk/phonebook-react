@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchContactsThunk } from "./redux/contacts/contactsOps";
+import { useDispatch, useSelector } from "react-redux";
+
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
@@ -11,14 +11,21 @@ import NotFound from "./pages/NotFound/NotFound";
 import ContactsPage from "./pages/ContactsPage/ContactsPage";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
+import { refreshThunk } from "./redux/auth/operations";
+import { selectIsRefreshing } from "./redux/auth/slice";
+import Loader from "./components/Loader/Loader";
+import Refresher from "./components/Refresher/Refresher";
 
 function App() {
+  const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContactsThunk());
+    dispatch(refreshThunk());
   }, [dispatch]);
-  return (
+  return isRefreshing ? (
+    <Refresher />
+  ) : (
     <Routes>
       <Route
         path="/"
