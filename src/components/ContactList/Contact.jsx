@@ -3,7 +3,10 @@ import { FaPhone } from "react-icons/fa6";
 import s from "./Contact.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
-import { deleteContactsThunk } from "../../redux/contacts/contactsOps";
+import {
+  deleteContactsThunk,
+  editContactsThunk,
+} from "../../redux/contacts/contactsOps";
 import { selectIsLoading } from "../../redux/contacts/contactsSlice";
 import Loader from "../Loader/Loader";
 
@@ -25,13 +28,22 @@ const Contact = ({ item }) => {
             {item.number}
           </p>
         </div>
-        <button
-          className={s.deleteButton}
-          type="button"
-          onClick={() => dispatch(deleteContactsThunk(item.id))}
-        >
-          Delete
-        </button>
+        <div className={s.btnWrapper}>
+          <button
+            className={s.deleteButton}
+            type="button"
+            onClick={() => dispatch(deleteContactsThunk(item.id))}
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            className={s.deleteButton}
+            onClick={() => dispatch(editContactsThunk(item.id))}
+          >
+            Edit
+          </button>
+        </div>
       </div>
     </>
   );

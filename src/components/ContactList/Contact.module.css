@@ -31,3 +31,9 @@
 .deleteButton:hover {
   background-color: black; /* Change color on hover to a darker orange */
 }
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

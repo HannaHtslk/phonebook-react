@@ -18,6 +18,7 @@ export const deleteContactsThunk = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const { data } = await goitApi.delete(`contacts/${id}`);
+
       return data.id;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -30,6 +31,7 @@ export const addContactsThunk = createAsyncThunk(
   async (body, thunkApi) => {
     try {
       const { data } = await goitApi.post("contacts", body);
+
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
