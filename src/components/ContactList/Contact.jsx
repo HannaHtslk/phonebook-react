@@ -3,14 +3,11 @@ import { FaPhone } from "react-icons/fa6";
 import s from "./Contact.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  deleteContactsThunk,
-  editContactsThunk,
-} from "../../redux/contacts/contactsOps";
+import { deleteContactsThunk } from "../../redux/contacts/contactsOps";
 import { selectIsLoading } from "../../redux/contacts/contactsSlice";
 import Loader from "../Loader/Loader";
 
-const Contact = ({ item }) => {
+const Contact = ({ openElement, item }) => {
   const dispatch = useDispatch();
 
   const isLoading = useSelector(selectIsLoading);
@@ -39,7 +36,7 @@ const Contact = ({ item }) => {
           <button
             type="button"
             className={s.deleteButton}
-            onClick={() => dispatch(editContactsThunk(item.id))}
+            onClick={() => openElement(item)}
           >
             Edit
           </button>

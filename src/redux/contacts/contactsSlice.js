@@ -46,6 +46,7 @@ const contactsSlice = createSlice({
       })
       .addCase(editContactsThunk.fulfilled, (state, { payload }) => {
         const item = state.items.find((item) => item.id === payload.id);
+
         item.name = payload.name;
         item.number = payload.number;
       })
