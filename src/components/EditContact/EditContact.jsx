@@ -3,6 +3,7 @@ import { useId } from "react";
 import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { editContactsThunk } from "../../redux/contacts/contactsOps";
+import toast from "react-hot-toast";
 
 const EditContact = ({ closeModal, contacts }) => {
   const namelFieldId = useId();
@@ -18,7 +19,10 @@ const EditContact = ({ closeModal, contacts }) => {
   const handleSubmit = (values) => {
     const updatedContact = { ...contacts, ...values };
 
-    dispatch(editContactsThunk(updatedContact));
+    dispatch(editContactsThunk(updatedContact))
+      .unwrap()
+      .then(() => toast.success(`${values.name} edited successfully!`))
+      .catch(() => toast.error("Can not edit this contact!"));
     closeModal();
   };
   return (
