@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
   const emailFieldId = useId();
@@ -25,8 +26,10 @@ const LoginForm = () => {
     password: "",
   };
   const handleSubmit = (values, actions) => {
-    dispatch(loginThunk(values));
-    actions.resetForm();
+    dispatch(loginThunk(values))
+      .unwrap()
+      .then(() => actions.resetForm())
+      .catch(toast.error("Credentials are not valid"));
   };
   return (
     <div>

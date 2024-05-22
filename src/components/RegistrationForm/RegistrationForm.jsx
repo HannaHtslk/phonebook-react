@@ -6,6 +6,7 @@ import { ErrorMessage } from "formik";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 
 const RegistrationForm = () => {
   const nameFieldId = useId();
@@ -33,9 +34,11 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = (values, actions) => {
-    dispatch(registerThunk(values));
-
-    actions.resetForm();
+    console.log(values);
+    dispatch(registerThunk(values))
+      .unwrap()
+      .then(() => actions.resetForm())
+      .catch(toast.error("Credentials are not valid"));
   };
   return (
     <div className={s.container}>
