@@ -14,7 +14,6 @@ const ContactList = () => {
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
   const openEl = (contact) => {
-    console.log(contact);
     setEditedData(contact);
     openModal();
   };
