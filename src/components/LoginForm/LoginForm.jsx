@@ -29,7 +29,7 @@ const LoginForm = () => {
     dispatch(loginThunk(values))
       .unwrap()
       .then(() => actions.resetForm())
-      .catch(toast.error("Credentials are not valid"));
+      .catch(() => toast.error("Credentials are not valid"));
   };
   return (
     <div>

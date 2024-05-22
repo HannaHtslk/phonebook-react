@@ -34,11 +34,10 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
     dispatch(registerThunk(values))
       .unwrap()
       .then(() => actions.resetForm())
-      .catch(toast.error("Credentials are not valid"));
+      .catch(() => toast.error("Such user already exists!"));
   };
   return (
     <div className={s.container}>
