@@ -2,7 +2,7 @@ import s from "./EditContact.module.css";
 import { useId } from "react";
 import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { editContactsThunk } from "../../redux/contacts/contactsOps";
+import { editContactsThunk } from "../../redux/contacts/operations";
 import toast from "react-hot-toast";
 
 const EditContact = ({ closeModal, contacts }) => {

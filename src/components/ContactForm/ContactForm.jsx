@@ -6,7 +6,7 @@ import s from "./ContactForm.module.css";
 import { ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 
-import { addContactsThunk } from "../../redux/contacts/contactsOps";
+import { addContactsThunk } from "../../redux/contacts/operations";
 
 const ContactForm = () => {
   const dispatch = useDispatch();

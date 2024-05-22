@@ -4,7 +4,7 @@ import {
   deleteContactsThunk,
   editContactsThunk,
   fetchContactsThunk,
-} from "./contactsOps";
+} from "./operations";
 import { logoutThunk } from "../auth/operations";
 import toast from "react-hot-toast";
 
